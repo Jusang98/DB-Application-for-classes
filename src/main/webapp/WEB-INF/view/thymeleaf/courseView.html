@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>강의 조회</title>
+</head>
+<body>
+<span>
+            과목번호: <span th:text="${course.id}"/><br/>
+            교수이름: <span th:text="${course.teacher}"/><br/>
+            과목이름: <span th:text="${course.subject}"/><br/>
+            <a href="/courseList">
+                <span>강의목록</span>
+            </a><br/>
+</span>
+
+</body>
+</html>

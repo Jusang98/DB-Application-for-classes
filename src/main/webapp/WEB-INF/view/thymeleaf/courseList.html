@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>과목번호</th>
+        <th>담당교수</th>
+        <th>과목</th>
+        <th>수정</th>
+        <th>삭제</th>
+    </tr>
+    <span>
+    <tr th:each="course : ${courseList}">
+        <td th:text="${course.id}"></td>
+        <td th:text="${course.teacher}"></td>
+        <td th:text="${course.subject}"></td>
+        <td><a th:href="@{'/course/' + ${course.id} + '/modify'}">수정</a></td>
+        <td><a th:href="@{'/course/' + ${course.id} + '/delete'}">삭제</a></td>
+
+    </tr>
+    </span>
+    <button onclick="location.href='/register'">등록</button >
+</table>
+</body>
+</html>
+<button th:onclick="|location.href='@{courseList/'+${course.id}+'/modify}'|">정보수정</button>
